@@ -3,7 +3,7 @@ const sqlite3 = require('sqlite3').verbose()
 const fs = require('fs')
 const getFavicons = require('get-website-favicon')
 
-let placesSqlite, faviconsSqlite, rangeNewestUrl, saveToPath, rangeOldestUrl, downloadMissingFavicons
+let placesSqlite, faviconsSqlite, rangeNewestUrl, outputPath, rangeOldestUrl, downloadMissingFavicons
 
 placesSqlite = String.raw`places.sqlite`
 faviconsSqlite = String.raw`favicons.sqlite`
@@ -13,9 +13,9 @@ faviconsSqlite = String.raw`favicons.sqlite`
 // downloadMissingFavicons = true
 
 
-firefoxSqliteHistoryToHTML(placesSqlite, faviconsSqlite, saveToPath, rangeNewestUrl, rangeOldestUrl, downloadMissingFavicons)
+firefoxSqliteHistoryToHTML(placesSqlite, faviconsSqlite, outputPath, rangeNewestUrl, rangeOldestUrl, downloadMissingFavicons)
 
-function firefoxSqliteHistoryToHTML(placesSqlite, faviconsSqlite, saveToPath=`${__dirname}/sessionBuddy.html`, rangeNewestUrl, rangeOldestUrl) {
+function firefoxSqliteHistoryToHTML(placesSqlite, faviconsSqlite, outputPath=`${__dirname}/sessionBuddy.html`, rangeNewestUrl, rangeOldestUrl) {
 
   const favDb = new sqlite3.Database(faviconsSqlite)
 
@@ -113,7 +113,7 @@ function firefoxSqliteHistoryToHTML(placesSqlite, faviconsSqlite, saveToPath=`${
   </script>
 </body>`
 
-          fs.writeFileSync(saveToPath, finalText)
+          fs.writeFileSync(outputPath, finalText)
 
           db.close()
           favDb.close()
