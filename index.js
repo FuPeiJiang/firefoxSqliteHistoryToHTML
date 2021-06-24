@@ -8,9 +8,9 @@ let placesSqlite, faviconsSqlite, rangeNewestUrl, saveToPath, rangeOldestUrl, do
 placesSqlite = String.raw`places.sqlite`
 faviconsSqlite = String.raw`favicons.sqlite`
 
-rangeNewestUrl = 'https://github.com/FuPeiJiang/firefoxSqliteHistoryToHTML'
-rangeOldestUrl = 'https://github.com/FuPeiJiang/firefoxSqliteHistoryToHTML'
-downloadMissingFavicons = true
+// rangeNewestUrl = 'https://github.com/FuPeiJiang/firefoxSqliteHistoryToHTML'
+// rangeOldestUrl = 'https://github.com/FuPeiJiang/firefoxSqliteHistoryToHTML'
+// downloadMissingFavicons = true
 
 
 firefoxSqliteHistoryToHTML(placesSqlite, faviconsSqlite, saveToPath, rangeNewestUrl, rangeOldestUrl, downloadMissingFavicons)
