@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "get-website-favicon": "^0.0.7",
+    "sqlite3": "^5.0.2"
+  }
+}
